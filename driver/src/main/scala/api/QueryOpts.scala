@@ -28,17 +28,18 @@ object SortOrder {
 
 /**
  * A helper to make the query options.
- * You may use the methods to set the fields of this class, or set them directly.
+ * You may use the methods to set the fields of this class,
+ * or set them directly.
  *
  * @param skipN the number of documents to skip.
  * @param batchSizeN the upper limit on the number of documents to retrieve per batch.
  * @param flagsN the query flags
  */
 case class QueryOpts(
-    skipN: Int = 0,
-    batchSizeN: Int = 0,
-    flagsN: Int = 0
-) {
+  skipN: Int = 0,
+  batchSizeN: Int = 0,
+  flagsN: Int = 0) extends QueryOps {
+  type Self = QueryOpts
 
   /** Sets the number of documents to skip. */
   def skip(n: Int) = copy(skipN = n)
